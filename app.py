@@ -1,6 +1,9 @@
+import os
+
 from io import BytesIO
 
 from pandapower import io_utils, file_io
+import uvicorn
 import pandapower as pp
 import pandas as pd
 from pandas import ExcelWriter
@@ -9,6 +12,10 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.responses import Response
 
 from pf_types import NetworkData
+
+from dotenv import load_dotenv
+
+load_dotenv()
 
 app = FastAPI()
 
@@ -122,3 +129,6 @@ def file_pf(pf_method: str, iter_limit: float, file: UploadFile):
     
 
 app.mount("/", StaticFiles(directory="web", html=True))
+
+if __name__ == "main":
+   uvicorn.run(app, host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))

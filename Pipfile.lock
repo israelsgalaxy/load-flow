@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "e6c556afd756d6832205481d8b0a3c59e536c4305118fdd682f9576f7e0203e5"
+            "sha256": "0cd4abf58ed5a881879f6adac8f97ab866fdda6da8804771535d40ef2d137191"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -1156,6 +1156,7 @@
                 "sha256:a8df96034aae6d2d50a4ebe8216326c61c3eb64836776504fcca410e5937a3ba",
                 "sha256:f5971a9226b701070a4bf2c38c89e5a3f0d64de8debda981d1db98583009122a"
             ],
+            "index": "pypi",
             "version": "==1.0.0"
         },
         "python-igraph": {

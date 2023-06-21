@@ -13,6 +13,7 @@ pandas = "*"
 pandapower = {extras = ["all"], version = "*"}
 python-multipart = "*"
 openpyxl = "*"
+python-dotenv = "*"
 
 [dev-packages]
 
