@@ -1,0 +1,10 @@
+<svg class="bus" width="50" height="50" xmlns="http://www.w3.org/2000/svg">
+  <g>
+   <ellipse stroke=" rgb(0, 0, 0)" fill=" rgb(216, 216, 216)" ry="11.538" rx="11.628" cy="25.69662" cx="33.11137"/>
+   <path stroke=" rgb(0, 0, 0)" fill=" rgb(216, 216, 216)" d="m3.14137,25.56862c0.056,0.001 20.525,0.086 17.647,0.015"/>
+   <text font-size=" 21.2px" font-family=" Arial, sans-serif" fill=" rgb(51, 51, 51)" transform="matrix(0.398682 0 0 0.459256 50.29 64.544)" y="-121.93734" x="-126.1407">Bus</text>
+   <path class="busbar" stroke=" rgb(0, 0, 0)" fill=" rgb(216, 216, 216)" d="m2.72037,10.57162l0,30.952"/>
+   <text font-size=" 6px" font-family=" Arial, sans-serif" fill=" rgb(51, 51, 51)" y="67.27462" x="79.7804" transform="matrix(0.765263 0 0 1 -56.7741 -19.4816)">Phi=0</text>
+   <text font-size=" 6px" font-family=" Arial, sans-serif" fill=" rgb(51, 51, 51)" y="67.27462" x="69.04051" transform="matrix(0.701289 0 0 1 -43.5546 -25.1696)">V=0</text>
+  </g>
+</svg>

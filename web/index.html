@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <title>Power Flow Analysis</title>
+</head>
+
+<body>
+  <div id="header"></div>
+  <div id="main">
+    <div id="components-panel">
+      <div id="add-slack-bus-div">
+        <button id="add-slack-bus-btn" title="Add Slack Bus">
+          <svg class="icon" width="50" height="50" xmlns="http://www.w3.org/2000/svg">
+            <g>
+             <ellipse stroke=" rgb(0, 0, 0)" fill=" rgb(216, 216, 216)" ry="11.538" rx="11.628" cy="25.69662" cx="33.11137"/>
+             <path stroke=" rgb(0, 0, 0)" fill=" rgb(216, 216, 216)" d="m3.14137,25.56862c0.056,0.001 20.525,0.086 17.647,0.015"/>
+             <path stroke=" rgb(0, 0, 0)" fill=" rgb(216, 216, 216)" d="m2.72037,10.57162l0,30.952"/>
+            </g>
+          </svg>          
+        </button>
+      </div>
+      <div id="add-generator-bus-div">
+        <button id="add-generator-bus-btn" title="Add Generator Bus">
+          <svg class="icon" width="50" height="50" xmlns="http://www.w3.org/2000/svg">
+            <g>
+             <ellipse stroke=" rgb(0, 0, 0)" fill=" rgb(216, 216, 216)" ry="11.538" rx="11.628" cy="25.38218" cx="32.8131"/>
+             <path stroke=" rgb(0, 0, 0)" fill=" rgb(216, 216, 216)" d="m2.8431,25.25418c0.056,0.001 20.525,0.086 17.647,0.015"/>
+             <path stroke=" rgb(0, 0, 0)" fill=" rgb(216, 216, 216)" d="m2.4221,10.25718l0,30.952"/>
+             <path stroke=" rgb(0, 0, 0)" fill=" rgb(216, 216, 216)" d="m2.4211,15.22818l17.827,0"/>
+             <path stroke=" rgb(0, 0, 0)" fill=" rgb(216, 216, 216)" d="m15.7921,11.72618l5.729,3.82"/>
+             <path stroke=" rgb(0, 0, 0)" fill=" rgb(216, 216, 216)" d="m21.1631,15.22718l-5.014,3.502"/>
+            </g>
+          </svg>
+        </button>
+      </div>
+      <div id="add-load-bus-div">
+        <button id="add-load-bus-btn" title="Add Load Bus">
+          <svg class="icon" width="50" height="50" xmlns="http://www.w3.org/2000/svg">
+            <g>
+             <path stroke=" rgb(0, 0, 0)" fill=" rgb(216, 216, 216)" d="m3.15679,10.65894l-0.319,30.243"/>
+             <path stroke=" rgb(0, 0, 0)" fill=" rgb(216, 216, 216)" d="m28.62379,13.47594l5.729,3.82"/>
+             <path stroke=" rgb(0, 0, 0)" fill=" rgb(216, 216, 216)" d="m34.33379,16.62594l-5.014,3.502"/>
+             <path stroke=" rgb(0, 0, 0)" fill=" rgb(216, 216, 216)" d="m3.47579,17.02594l30.689,0"/>
+             <path stroke=" rgb(0, 0, 0)" fill=" rgb(216, 216, 216)" d="m29.63579,28.77594l5.729,3.82"/>
+             <path stroke=" rgb(0, 0, 0)" fill=" rgb(216, 216, 216)" d="m35.01779,32.45194l-5.014,3.502"/>
+             <path stroke=" rgb(0, 0, 0)" fill=" rgb(216, 216, 216)" d="m3.15679,31.98894l32.073,0.318"/>
+            </g>
+          </svg>          
+        </button>
+      </div>
+    </div>
+    <div id="editor"></div>
+    <div id="menu">
+      <div id="power_flow_method">
+        <label for="pf-method-input">Select Power Flow Method</label>
+        <select name="pf-method-input" id="pf-method-input">
+          <option value="gs">Gauss Seidel</option>
+          <option value="nr">Newton Raphson</option>
+          <option value="fdxb">Fast Decoupled</option>
+        </select>
+      </div>
+      <div id="iteration_limit">
+        <label for="iter-limit-input">Iteration Limit</label>
+        <input type="number" name="iter-limit-input" id="iter-limit-input" />
+      </div>
+      <div id="component-properties-div">
+        <div id="value-1-div"></div>
+        <div id="value-2-div"></div>
+        <div>
+          <button id="update-component-properties-btn">
+            Update Component Values
+          </button>
+        </div>
+      </div>
+      <div id="convert_to_pu">
+        <label for="per-unit">Convert to Per Unit</label>
+        <input type="checkbox" name="per-unit" id="per-unit-checkbox" />
+      </div>
+      <div id="per-unit-div">
+        <div>
+          <label for="per-unit">Base Power (MW)</label>
+          <input type="number" step="0.0001" name="base-power-input" id="base-power-input"/>
+        </div>
+        <div>
+          <label for="per-unit">Base Voltage (KV)</label>
+          <input type="number" step="0.0001" name="base-voltage-input" id="base-voltage-input"/>
+        </div>
+      </div>
+      <div id="upload_data">
+        <label for="file-data">Upload Network Data</label>
+        <input type="file" name="file-data" id="file-data" />
+      </div>
+      <div id="calculate">
+        <button id="calc-pf-btn">Calculate Power Flow</button>
+      </div>
+    </div>
+  </div>
+  <div id="footer"></div>
+  <script src="./script.js"></script>
+</body>
+
+</html>

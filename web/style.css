@@ -1,0 +1,261 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+#components-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8em;
+  padding: 2em;
+  margin: 0 3em;
+  border: 1px solid black;
+  border-radius: 0.8em;
+  background-color: #fffef2;
+}
+
+#components-panel div button {
+  cursor: pointer;
+  border: 0.3px solid #000;
+  background-color: transparent;
+  padding: 0.6em;
+  border-radius: 0.3em;
+}
+
+/* the canvas */
+#editor {
+  width: 1000px;
+  height: 600px;
+  border: 1px solid black;
+  position: relative;
+  border-radius: 1em;
+  background-color: #fffef2;
+}
+
+#menu {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  justify-content: center;
+  /* height: 600px; */
+  padding: 2em;
+  margin: 0 3em;
+  border: 1px solid black;
+  border-radius: 0.8em;
+  background-color: #fffef2;
+}
+
+#menu #component_header {
+  margin-bottom: 1em;
+}
+
+#menu #component_header #component_name {
+  font-size: 1.5em;
+  font-weight: 500;
+}
+
+hr {
+  border: 0.8px solid #878787;
+}
+
+#menu #power_flow_method {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
+  margin-bottom: 0.5em;
+}
+
+#menu #power_flow_method label {
+  font-size: small;
+}
+
+#menu #power_flow_method select {
+  padding: 0.5em;
+  border: 1px solid #878787;
+  /* border-right: 1.5em solid transparent; */
+  border-radius: 0.3em;
+  font-size: medium;
+}
+
+#menu #power_flow_method select:focus {
+  outline: none;
+  border: 1px solid #878787;
+}
+
+#iteration_limit {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
+  margin-bottom: 0.5em;
+}
+
+#iteration_limit label {
+  font-size: small;
+}
+
+#iteration_limit input {
+  padding: 0.5em;
+  border: 1px solid #878787;
+  /* border-right: 1.5em solid transparent; */
+  border-radius: 0.3em;
+  font-size: medium;
+}
+
+#iteration_limit input:focus {
+  outline: none;
+  border: 1px solid #000;
+}
+
+#menu #convert_to_pu {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.8em;
+  margin: 0.8em 0;
+  accent-color: black;
+}
+
+#menu #convert_to_pu label {
+  font-size: medium;
+}
+
+#menu #convert_to_pu input {
+  padding: 0.5em;
+  border: 1px solid #878787;
+  border-radius: 0.3em;
+  font-size: medium;
+  height: 1.2em;
+  width: 1.2em;
+}
+
+#component-properties-div div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
+}
+
+#component-properties-div div input {
+  font-size: 0.8em;
+  padding: 0.4em 0.6em;
+  font-size: medium;
+  border-radius: 0.3em;
+  border: 0.4px solid #878787;
+  margin-bottom: 0.8em;
+}
+
+#component-properties-div div input:focus {
+  outline: none;
+  border: 1px solid #000;
+}
+
+#component-properties-div div button {
+  font-size: 0.8em;
+  padding: 0.8em 0.8em;
+  font-size: 0.9em;
+  border-radius: 0.4em;
+  border: 0.4px solid #878787;
+}
+
+#menu #per-unit-div div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
+  margin-bottom: 0.8em;
+}
+
+#menu #per-unit-div div label {
+  font-size: 0.9em;
+}
+
+#menu #per-unit-div div input {
+  font-size: 0.8em;
+  padding: 0.4em 0.6em;
+  font-size: medium;
+}
+
+#menu #per-unit-div div input:focus {
+  outline: none;
+  border: 1px solid #878787;
+}
+
+#menu #upload_data {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
+  margin-bottom: 0.6em;
+}
+
+#menu #upload_data label {
+  font-size: 0.9em;
+}
+
+/* the stuff that displays properties for each components */
+#component-values-div {
+  display: none;
+}
+
+/* contains editor, menu and components panel */
+#main {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: aliceblue;
+}
+
+/* initial bus component position on the editor */
+.bus-component {
+  position: absolute;
+  top: 250px;
+  left: 400px;
+}
+
+#menu #calculate #calc-pf-btn {
+  position: relative;
+  width: 100%;
+  padding: 1em 1em;
+  /* background-color: aliceblue; */
+  border: 1px solid #878787;
+  border-radius: 0.3em;
+  font-weight: 500;
+  font-size: medium;
+  cursor: pointer;
+}
+
+/* to make svgs ignore click events inside the component panel for componet buttons */
+.icon {
+  pointer-events: none;
+}
+
+/* the styling for each bus (selected or not) */
+.bus {}
+
+/*  style for when a bus is selected in the editor */
+.busDiv.active svg{
+  background-color: red;
+}
+
+/* style for when a bus is the second selected */
+.busDiv.passive svg {
+  background-color: blue;
+}
+
+/* style for when a line is selected in the editor */
+.lineDiv.active path {
+  stroke: red;
+  fill: red;
+}
+
+/* style for when a line is selected second in the editor */
+.lineDiv.passive path {
+  stroke: blue;
+  fill: blue;
+}
+/* header and footer too */
