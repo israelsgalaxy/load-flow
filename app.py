@@ -130,5 +130,4 @@ def file_pf(pf_method: str, iter_limit: float, file: UploadFile):
 
 app.mount("/", StaticFiles(directory="web", html=True))
 
-if __name__ == "main":
-   uvicorn.run(app, host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
+uvicorn.run(app, host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
