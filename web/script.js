@@ -381,6 +381,7 @@ function makeComponentMoveable(componentDiv) {
       let startBus = document.getElementById(network.lines[lineId][0])
       let endBus = document.getElementById(network.lines[lineId][1])
       drawLine(startBus, endBus, lineDiv)
+      makeComponentSelectable(lineDiv)
     }
 
     updateSelectedComponents(componentDiv, null)
@@ -392,7 +393,7 @@ function makeComponentSelectable(componentDiv) {
   let component = null
 
   if (componentDiv.classList.contains("lineDiv")) {
-    component = componentDiv.querySelector("svg")
+    component = componentDiv.querySelector("path")
   } else {
     component = componentDiv
   }
@@ -470,7 +471,7 @@ function drawLine(startBus, endBus, lineDiv) {
 
   lineDiv.innerHTML = `<svg class="line" width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg"><g><path d="m${start[0]},${start[1]}l${end[0]},${end[1]}z" stroke="#000" stroke-width="1" fill="#000000"/></g></svg>`
 
-  let line = lineDiv.querySelector("svg")
+  let line = lineDiv.querySelector("path")
   line.style.pointerEvents = "all"
 
   return lineDiv
