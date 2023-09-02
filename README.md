@@ -1,6 +1,6 @@
 # load-flow
-### Bringing load flow algorithms to the web
-This project allows amateur users draw electrical power networks and performing power flow analysis on them from any browser.
+### Bringing load flow analysis to the web
+This project allows amateur users draw electrical power networks and perform power flow analysis on them from any browser.
 ## User Interface
 ![Screenshot (343)](https://github.com/israelsgalaxy/load-flow/assets/59661679/ec77183a-9921-4f24-9587-6a7da3b794c7)
 ### Component Panel
